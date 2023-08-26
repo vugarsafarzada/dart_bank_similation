@@ -1,7 +1,7 @@
 import 'dart:math';
 
 class UsersBase{
-  Map<String, Map> _usersBase = {};
+  final Map<String, Map> _usersBase = {};
 
   void saveUserToBase(Map user){
     var userId = getRandomId();

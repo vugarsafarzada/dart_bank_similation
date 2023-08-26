@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'usersBase.dart';
+import 'users_base.dart';
 var input = stdin;
 String divider = '\n-------------------------------\n';
-UsersBase userBase = new UsersBase();
+UsersBase userBase = UsersBase();
 
 class User{
   String? firstName;
@@ -26,15 +26,15 @@ class UserAccount extends User{
     print('Create an account!\n');
 
     print('Enter your name: ');
-    this.firstName = input.readLineSync();
+    firstName = input.readLineSync();
     
     print('Enter your surname: ');
-    this.lastName = input.readLineSync();
+    lastName = input.readLineSync();
     
     print('Enter your password: ');
-    this.password = input.readLineSync().toString();
+    password = input.readLineSync().toString();
     
-    this.balance = 0.0;
+    balance = 0.0;
     print(divider);
 
     Map<String, dynamic> newUser = {
@@ -81,7 +81,6 @@ class Auth extends UserAccount{
     return super.login();
   }
 
-  @override
   dynamic register(){
     print('From Register class');
     return super.createAnAccount();

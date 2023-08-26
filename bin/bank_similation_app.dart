@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:bank_similation_app/account.dart';
-import 'package:bank_similation_app/usersBase.dart';
+import 'package:bank_similation_app/users_base.dart';
 
-UsersBase userBase = new UsersBase();
+UsersBase userBase = UsersBase();
 var input = stdin;
 
 void main() {
-  UserAccount userAccount = new UserAccount(null, null, null);
+  UserAccount userAccount = UserAccount(null, null, null);
   while (true) {
     print('\ncommand >>'.toUpperCase());
     var cmd = input.readLineSync();
@@ -20,13 +20,13 @@ void main() {
       }
     } else if(cmd == 'login'){
      var user = Auth(null, null, null).login();
-     print(user != null ? user : '');
+     print(user ?? '');
     } else if(cmd == 'exit'){
       print('\nGoodbye!');
       break;
     } else {
       print('[X] Command not found -> "$cmd"');
     }
-    userAccount = new UserAccount(null, null, null);    
+    userAccount = UserAccount(null, null, null);    
   }
 }
